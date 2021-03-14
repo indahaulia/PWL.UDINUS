@@ -1,4 +1,6 @@
 <?php
+//INDAH AULIA | A11.2019.11684
+
 $hasil=0;
 if (isset($_GET['num1'])&&isset($_GET['operator'])&&isset($_GET['num2'])) {
     $num1 = $_GET['num1'];
