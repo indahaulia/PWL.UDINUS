@@ -4,12 +4,14 @@ class Form {
     var $action; 
     var $submit = "Submit Form"; 
     var $jumField = 0; 
+
     function __construct($action, $submit){ 
         $this->action = $action; 
         $this->submit = $submit; 
-    } 
+    }
+
     function displayForm(){ 
-        echo "<form action='".$this->action."' method='POST'>"; 
+        echo "<form action='$this->action' method='POST'>"; 
         echo "<table width='100%'>"; 
         for ($j=0; $j<count($this->fields); $j++) { 
             echo "<tr><td align='right'>".$this->fields[$j]['label']."</td>"; 
@@ -24,5 +26,14 @@ class Form {
         $this->fields [$this->jumField]['label'] = $label; 
         $this->jumField ++; 
     } 
-} 
+}
+
+echo "<html><head><title>Mahasiswa</title></head><body>"; 
+$form = new Form ("","Input Form"); 
+$form->addField ("txtnim", "Nim"); 
+$form->addField ("txtnama", "Nama"); 
+$form->addField ("txtalamat", "Alamat"); 
+echo "<h3>Silahkan isi form berikut ini :</h3>"; 
+$form->displayForm(); 
+echo "</body></html>"; 
 ?>
